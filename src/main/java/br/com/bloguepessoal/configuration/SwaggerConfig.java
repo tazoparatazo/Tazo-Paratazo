@@ -19,6 +19,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class SwaggerConfig {
+	
 	@Bean
 	public Docket api() {
 		
@@ -37,8 +38,8 @@ public class SwaggerConfig {
 	public static ApiInfo metadata() {
 
 		return new ApiInfoBuilder()
-			.title("Tazo Parazo")
-			.description("Projeto API Spring - Blog Pessoal")
+			.title("Tazo Paratazo")
+			.description("Projeto API Spring - Tazo Paratazo")
 			.version("1.0.0")
 			.license("Apache License Version 2.0")
 			.licenseUrl("http://localhost:8080/swagger-ui/")

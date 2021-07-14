@@ -25,7 +25,7 @@ public class UsuarioService {
 	 public Usuario cadastrarUsuario(Usuario usuario) {
 		
 		
-		 if(usuarioRepository.findByUsuario(usuario.getLogin()).isPresent())
+		 if(usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 				throw new ResponseStatusException(
 				          	HttpStatus.BAD_REQUEST, "Usuário já existe!", null);
 		
@@ -78,7 +78,8 @@ public class UsuarioService {
 
 			}
 		}
-		return null;
+		throw new ResponseStatusException(
+				HttpStatus.UNAUTHORIZED, "Usuário ou senha inválidos!", null);
 	}
 
 }

@@ -22,7 +22,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	@NotNull
 	@Size (min = 2, max = 100)
@@ -37,23 +37,26 @@ public class Usuario {
 	@Size(min = 5)
 	private String senha;
 	
-	public String getLogin() {
-		return Login;
-	}
-
-
-	public void setLogin(String login) {
-		Login = login;
-	}
-
-
-	@NotNull
-	@Size(min =5 , max = 100)
-	private String Login;
-		
+	
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List <Postagem> postagem;
+
+	
+	public Usuario() {
+	
+
+	}
+
+
+	public Usuario(Long id ,String nome,String usuario,  String senha) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+
 
 	public long getId() {
 		return id;

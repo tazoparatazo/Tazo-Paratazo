@@ -25,7 +25,7 @@ public class PostagemController {
 
 	
 	@Autowired
-	private PostagemRepository repository;
+	private PostagemRepository postagemrepository;
 	
 	@Autowired
 	PostagemService postagemService;
@@ -33,7 +33,7 @@ public class PostagemController {
 	@GetMapping("/listar")
 	public ResponseEntity<List<Postagem>> GetAll(){
 		
-		return ResponseEntity.ok(repository.findAll());
+		return ResponseEntity.ok(postagemrepository.findAll());
 	}
 	
 	
@@ -41,7 +41,7 @@ public class PostagemController {
 			
 		@GetMapping("/{id}")
 		public ResponseEntity<Postagem> getById(@PathVariable long id) {
-			return repository.findById(id)
+			return postagemrepository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 		}
@@ -49,7 +49,7 @@ public class PostagemController {
 			
 		@PostMapping
 			public ResponseEntity<Postagem> postPostagem (@RequestBody Postagem postagem){
-				return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
+				return ResponseEntity.status(HttpStatus.CREATED).body(postagemrepository.save(postagem));
 		}
 		
 		
@@ -67,19 +67,19 @@ public class PostagemController {
 		
 		@PutMapping
 		public ResponseEntity<Postagem> putPostagem (@RequestBody Postagem postagem){
-			return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
+			return ResponseEntity.status(HttpStatus.OK).body(postagemrepository.save(postagem));
 		}
 		
 		@DeleteMapping("/{id}")
 		public void deletePostagem(@PathVariable long id) {
-			repository.deleteById(id);
+			postagemrepository.deleteById(id);
 	}
 
 	
 	
 		@GetMapping("/titulo/{titulo}")
 		public ResponseEntity<List<Postagem>> getByTitulo(@PathVariable String titulo) {
-			return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
+			return ResponseEntity.ok(postagemrepository.findAllByTituloContainingIgnoreCase(titulo));
 	
 	
 		}
