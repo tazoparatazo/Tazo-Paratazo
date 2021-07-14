@@ -20,7 +20,7 @@ import br.com.bloguepessoal.service.PostagemService;
 
 @RestController
 @RequestMapping("/postagens")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 
 	
@@ -32,8 +32,7 @@ public class PostagemController {
 	
 	@GetMapping("/listar")
 	public ResponseEntity<List<Postagem>> GetAll(){
-		
-		return ResponseEntity.ok(postagemrepository.findAll());
+	 return ResponseEntity.ok(postagemrepository.findAll());
 	}
 	
 	
