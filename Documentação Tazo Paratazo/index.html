@@ -1,0 +1,1260 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Tazo Paratazo</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Tazo Paratazo</h1>
+    <div class="app-desc">Projeto API Spring - Tazo Paratazo</div>
+    <div class="app-desc">More information: <a href="https://github.com/tazoparatazo">https://github.com/tazoparatazo</a></div>
+    <div class="app-desc">Contact Info: <a href="tazoparatazo@gmail.com">tazoparatazo@gmail.com</a></div>
+    <div class="app-desc">Version: 1.0.0</div>
+    <div class="app-desc">BasePath:/tazoparatazo/TazoParatazo/1.0.0</div>
+    <div class="license-info">Apache License Version 2.0</div>
+    <div class="license-url">http://localhost:8080/swagger-ui/</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#PostagemController">PostagemController</a></h4>
+  <ul>
+  <li><a href="#curtirPostagemUsingPUT"><code><span class="http-method">put</span> /postagens/curtir/{id}</code></a></li>
+  <li><a href="#deletePostagemUsingDELETE"><code><span class="http-method">delete</span> /postagens/{id}</code></a></li>
+  <li><a href="#descurtirPostagemUsingPUT"><code><span class="http-method">put</span> /postagens/descurtir/{id}</code></a></li>
+  <li><a href="#getAllUsingGET"><code><span class="http-method">get</span> /postagens/listar</code></a></li>
+  <li><a href="#getByIdUsingGET"><code><span class="http-method">get</span> /postagens/{id}</code></a></li>
+  <li><a href="#getByTituloUsingGET"><code><span class="http-method">get</span> /postagens/titulo/{titulo}</code></a></li>
+  <li><a href="#postPostagemUsingPOST"><code><span class="http-method">post</span> /postagens</code></a></li>
+  <li><a href="#putPostagemUsingPUT"><code><span class="http-method">put</span> /postagens</code></a></li>
+  </ul>
+  <h4><a href="#TemaController">TemaController</a></h4>
+  <ul>
+  <li><a href="#deleteUsingDELETE"><code><span class="http-method">delete</span> /tema/{id}</code></a></li>
+  <li><a href="#getAllUsingGET"><code><span class="http-method">get</span> /tema</code></a></li>
+  <li><a href="#getByIdUsingGET1"><code><span class="http-method">get</span> /tema/{id}</code></a></li>
+  <li><a href="#getByNameUsingGET"><code><span class="http-method">get</span> /tema/descricao/{descricao}</code></a></li>
+  <li><a href="#postUsingPOST"><code><span class="http-method">post</span> /tema</code></a></li>
+  <li><a href="#putUsingPUT"><code><span class="http-method">put</span> /tema</code></a></li>
+  </ul>
+  <h4><a href="#UsuarioController">UsuarioController</a></h4>
+  <ul>
+  <li><a href="#autenticationUsingPOST"><code><span class="http-method">post</span> /usuarios/logar</code></a></li>
+  <li><a href="#getAllUsingGET1"><code><span class="http-method">get</span> /usuarios/all</code></a></li>
+  <li><a href="#getByIdUsingGET"><code><span class="http-method">get</span> /usuarios/{id}</code></a></li>
+  <li><a href="#postUsingPOST"><code><span class="http-method">post</span> /usuarios/cadastrar</code></a></li>
+  <li><a href="#putUsuarioUsingPUT"><code><span class="http-method">put</span> /usuarios/alterar</code></a></li>
+  </ul>
+
+  <h1><a name="PostagemController">PostagemController</a></h1>
+  <div class="method"><a name="curtirPostagemUsingPUT"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /postagens/curtir/{id}</code></pre></div>
+    <div class="method-summary">curtirPostagem (<span class="nickname">curtirPostagemUsingPUT</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Postagem">Postagem</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Postagem">Postagem</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deletePostagemUsingDELETE"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /postagens/{id}</code></pre></div>
+    <div class="method-summary">deletePostagem (<span class="nickname">deletePostagemUsingDELETE</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="descurtirPostagemUsingPUT"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /postagens/descurtir/{id}</code></pre></div>
+    <div class="method-summary">descurtirPostagem (<span class="nickname">descurtirPostagemUsingPUT</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Postagem">Postagem</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Postagem">Postagem</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /postagens/listar</code></pre></div>
+    <div class="method-summary">GetAll (<span class="nickname">getAllUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Postagem">Postagem</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getByIdUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /postagens/{id}</code></pre></div>
+    <div class="method-summary">getById (<span class="nickname">getByIdUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Postagem">Postagem</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Postagem">Postagem</a>
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getByTituloUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /postagens/titulo/{titulo}</code></pre></div>
+    <div class="method-summary">getByTitulo (<span class="nickname">getByTituloUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">titulo (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; titulo </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Postagem">Postagem</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="postPostagemUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /postagens</code></pre></div>
+    <div class="method-summary">postPostagem (<span class="nickname">postPostagemUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">postagem <a href="#Postagem">Postagem</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; postagem </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Postagem">Postagem</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Postagem">Postagem</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="putPostagemUsingPUT"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /postagens</code></pre></div>
+    <div class="method-summary">putPostagem (<span class="nickname">putPostagemUsingPUT</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">postagem <a href="#Postagem">Postagem</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; postagem </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Postagem">Postagem</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Postagem">Postagem</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="TemaController">TemaController</a></h1>
+  <div class="method"><a name="deleteUsingDELETE"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /tema/{id}</code></pre></div>
+    <div class="method-summary">delete (<span class="nickname">deleteUsingDELETE</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tema</code></pre></div>
+    <div class="method-summary">getAll (<span class="nickname">getAllUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Tema">Tema</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getByIdUsingGET1"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tema/{id}</code></pre></div>
+    <div class="method-summary">getById (<span class="nickname">getByIdUsingGET1</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Tema">Tema</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Tema">Tema</a>
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getByNameUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tema/descricao/{descricao}</code></pre></div>
+    <div class="method-summary">getByName (<span class="nickname">getByNameUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">descricao (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; descricao </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Tema">Tema</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="postUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /tema</code></pre></div>
+    <div class="method-summary">post (<span class="nickname">postUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">tema <a href="#Tema">Tema</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; tema </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Tema">Tema</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Tema">Tema</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="putUsingPUT"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /tema</code></pre></div>
+    <div class="method-summary">put (<span class="nickname">putUsingPUT</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">tema <a href="#Tema">Tema</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; tema </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Tema">Tema</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Tema">Tema</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="UsuarioController">UsuarioController</a></h1>
+  <div class="method"><a name="autenticationUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /usuarios/logar</code></pre></div>
+    <div class="method-summary">Autentication (<span class="nickname">autenticationUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">user <a href="#UsuarioLogin">UsuarioLogin</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; user </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#UsuarioLogin">UsuarioLogin</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#UsuarioLogin">UsuarioLogin</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getAllUsingGET1"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /usuarios/all</code></pre></div>
+    <div class="method-summary">GetAll (<span class="nickname">getAllUsingGET1</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Usuario">Usuario</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getByIdUsingGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /usuarios/{id}</code></pre></div>
+    <div class="method-summary">GetById (<span class="nickname">getByIdUsingGET</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; id format: int64</div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Usuario">Usuario</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Usuario">Usuario</a>
+    <h4 class="field-label">201</h4>
+    Objeto Criado!
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    Não Autorizado!
+        <a href="#"></a>
+    <h4 class="field-label">403</h4>
+    Proibido!
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Não Encontrado!
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    Erro!
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="postUsingPOST"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /usuarios/cadastrar</code></pre></div>
+    <div class="method-summary">Post (<span class="nickname">postUsingPOST</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">usuario <a href="#Usuario">Usuario</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; usuario </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Usuario">Usuario</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Usuario">Usuario</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="putUsuarioUsingPUT"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /usuarios/alterar</code></pre></div>
+    <div class="method-summary">putUsuario (<span class="nickname">putUsuarioUsingPUT</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">usuario <a href="#Usuario">Usuario</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; usuario </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Usuario">Usuario</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>*/*</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Usuario">Usuario</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Postagem"><code>Postagem</code> - Postagem</a></li>
+    <li><a href="#Tema"><code>Tema</code> - Tema</a></li>
+    <li><a href="#Usuario"><code>Usuario</code> - Usuario</a></li>
+    <li><a href="#UsuarioLogin"><code>UsuarioLogin</code> - UsuarioLogin</a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Postagem"><code>Postagem</code> - Postagem</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">curtidas (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">data (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">tema (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tema">Tema</a></span>  </div>
+<div class="param">texto </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">titulo </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">usuario (optional)</div><div class="param-desc"><span class="param-type"><a href="#Usuario">Usuario</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Tema"><code>Tema</code> - Tema</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">descricao (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">postagem (optional)</div><div class="param-desc"><span class="param-type"><a href="#Postagem">array[Postagem]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Usuario"><code>Usuario</code> - Usuario</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">nome </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">postagem (optional)</div><div class="param-desc"><span class="param-type"><a href="#Postagem">array[Postagem]</a></span>  </div>
+<div class="param">senha </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">usuario </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="UsuarioLogin"><code>UsuarioLogin</code> - UsuarioLogin</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  format: int64</div>
+<div class="param">nome (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">senha (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">token (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">usuario (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
