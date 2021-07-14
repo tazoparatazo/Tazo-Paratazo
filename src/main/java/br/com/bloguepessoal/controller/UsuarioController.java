@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 import br.com.bloguepessoal.model.Usuario;
 import br.com.bloguepessoal.model.UsuarioLogin;
 import br.com.bloguepessoal.repository.UsuarioRepository;
@@ -24,32 +26,32 @@ import br.com.bloguepessoal.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*" , allowedHeaders = "*")
 public class UsuarioController {
-
+	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-
+	
 	@Autowired
 	private UsuarioService usuarioService;
-
+	
 	@GetMapping("/all")
-	public ResponseEntity<List<Usuario>> getAll() {
+	public ResponseEntity<List<Usuario>> GetAll() {
 		return ResponseEntity.ok(usuarioRepository.findAll());
 	}
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<Usuario> getById(@PathVariable long id){
+	public ResponseEntity<Usuario> GetById(@PathVariable long id){
 		return usuarioRepository.findById(id).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());				
 	}
-
+	
 	@PostMapping("/logar")
-	public ResponseEntity<UsuarioLogin> autenticationUsuario(@RequestBody Optional<UsuarioLogin> usuario) {
-		return usuarioService.logarUsuario(usuario).map(resp -> ResponseEntity.ok(resp))
+	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user){
+		return usuarioService.logarUsuario(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
-
+	
 	@PostMapping("/cadastrar")
 	public ResponseEntity <Usuario> Post(@RequestBody Usuario usuario) {
 		
@@ -60,8 +62,8 @@ public class UsuarioController {
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
-	
 	}
+
 	
 	@PutMapping("/alterar")
 	public ResponseEntity<Usuario> putUsuario(@RequestBody Usuario usuario){
@@ -70,7 +72,7 @@ public class UsuarioController {
 			return ResponseEntity.ok(updateUsuario.get());
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().build();
-		}
+			}
 	}
-
 }
+	
