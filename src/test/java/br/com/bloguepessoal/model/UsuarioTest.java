@@ -44,7 +44,7 @@ public class UsuarioTest {
     @DisplayName("❌ Valida Atributos Nulos")
     void testValidaAtributosNulos() {
         
-        usuarioErro.setLogin("paulo@email.com.br");
+        usuarioErro.setUsuario("paulo@email.com.br");
         Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuarioErro);
         System.out.println(violacao.toString());
         assertFalse(violacao.isEmpty());
