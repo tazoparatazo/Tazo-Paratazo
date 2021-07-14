@@ -11,12 +11,12 @@ import br.com.bloguepessoal.model.Usuario;
 
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	
-	public Optional<Usuario> findByUsuario(String usuario);
-
+	public List <Usuario> findAllByNomeContainingIgnoreCase (String nome);
+	
+	public Optional <Usuario> findByUsuario(String usuario);
+	
 	public Usuario findByNome(String nome);
-
-	public List<Usuario> findAllByNomeContainingIgnoreCase(String nome);
-
+	
 }
