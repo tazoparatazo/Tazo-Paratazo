@@ -11,8 +11,8 @@
 	<groupId>br.org.generation</groupId>
 	<artifactId>bloguepessoal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>blogpessoal</name>
-	<description>Tazo Paratazo- Spring Boot</description>
+	<name>bloguepessoal</name>
+	<description>bloguepessoal- Spring Boot</description>
 	<properties>
 		<java.version>15</java.version>
 	</properties>
