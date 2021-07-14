@@ -19,14 +19,13 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class SwaggerConfig {
-	
 	@Bean
 	public Docket api() {
 		
 		return new Docket(DocumentationType.SWAGGER_2)
 	        .select()
 			.apis(RequestHandlerSelectors
-			.basePackage("br.com.bloguepessoal.controller"))
+			.basePackage("br.org.generation.blogpessoal.controller"))
 			.paths(PathSelectors.any())
 			.build()
 			.apiInfo(metadata())
@@ -38,7 +37,7 @@ public class SwaggerConfig {
 	public static ApiInfo metadata() {
 
 		return new ApiInfoBuilder()
-			.title("Blog Pessoal")
+			.title("Tazo Parazo")
 			.description("Projeto API Spring - Blog Pessoal")
 			.version("1.0.0")
 			.license("Apache License Version 2.0")
